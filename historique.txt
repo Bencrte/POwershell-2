@@ -1,0 +1,74 @@
+
+
+Id                 : 1
+CommandLine        : Set-Location -Path C:\
+                     #Une écriture possible pour la création d'un dossier
+                     New-Item -ItemType Directory -Path C:\ -Name FolderTest1
+                     #Une autre écriture possible pour la création d'un dossier
+                     New-Item -ItemType Directory -Path C:\FolderTest2
+                     #Création de fichier vide dans le dossier c:\FolderTest
+                     New-Item -ItemType File -Path C:\FolderTest1 -Name File1
+                     New-Item -ItemType File -Path C:\FolderTest1 -Name File2
+                     New-Item -ItemType File -Path C:\FolderTest1 -Name File3
+                     New-Item -ItemType File -Path C:\FolderTest1 -Name File4
+                     New-Item -ItemType File -Path C:\FolderTest1 -Name File5
+                     #Création de fichier vide dans le dossier c:\FolderTest2
+                     $Count = 6
+                     Do
+                     {
+                         New-Item -ItemType File -Path C:\FolderTest2 -Name "File$Count"
+                         $Count++
+                     }
+                     While ($Count -lt 11)
+ExecutionStatus    : Completed
+StartExecutionTime : 17/11/2024 22:15:32
+EndExecutionTime   : 17/11/2024 22:15:33
+
+Id                 : 2
+CommandLine        : New-Item -Path .\OddFolder, .\EvenFolder -ItemType directory
+ExecutionStatus    : Completed
+StartExecutionTime : 17/11/2024 22:16:31
+EndExecutionTime   : 17/11/2024 22:16:31
+
+Id                 : 3
+CommandLine        : Move-Item -path .\FolderTest1\File2, .\FolderTest1\File4, .\FolderTest2\File6, .\FolderTest2\File8, .\FolderTest2\File10 
+                     -Destination .\EvenFolder
+ExecutionStatus    : Completed
+StartExecutionTime : 17/11/2024 22:20:08
+EndExecutionTime   : 17/11/2024 22:20:08
+
+Id                 : 4
+CommandLine        : Move-Item -path .\FolderTest1\File1, .\foldertest1\File3 .\FolderTest1\File5, .\FolderTest2\File7, .\FolderTest2\File9 
+                     -Destination .\OddFolder
+ExecutionStatus    : Completed
+StartExecutionTime : 17/11/2024 22:21:53
+EndExecutionTime   : 17/11/2024 22:21:53
+
+Id                 : 5
+CommandLine        : Move-Item -path .\FolderTest1\File1, .\foldertest1\File3, .\FolderTest1\File5, .\FolderTest2\File7, .\FolderTest2\File9 
+                     -Destination .\OddFolder
+ExecutionStatus    : Completed
+StartExecutionTime : 17/11/2024 22:22:23
+EndExecutionTime   : 17/11/2024 22:22:23
+
+Id                 : 6
+CommandLine        : Get-ChildItem -Recurse .\EvenFolder, .\OddFolder > listing.txt
+ExecutionStatus    : Completed
+StartExecutionTime : 17/11/2024 22:24:44
+EndExecutionTime   : 17/11/2024 22:24:44
+
+Id                 : 7
+CommandLine        : Get-History > historique.txt
+ExecutionStatus    : Completed
+StartExecutionTime : 17/11/2024 22:25:51
+EndExecutionTime   : 17/11/2024 22:25:51
+
+Id                 : 8
+CommandLine        : Get-History | Format-List | Out-String | Set-Content .\historique.txt
+ExecutionStatus    : Completed
+StartExecutionTime : 17/11/2024 22:27:53
+EndExecutionTime   : 17/11/2024 22:27:53
+
+
+
+
